@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+<style>
+	h2 {
+    	padding: 10px 10px;
+    	font-family: 'Raleway';
+        font-size: 30px;
+        color: #282828;
+    	border: 4px solid #ff9900;
+        box-shadow: 5px 5px 5px grey;
+        text-align: center;
+    }
+	.input {  
+		margin-top: 5px;
+		margin-bottom: 15px;
+		padding: 20px 20px;  
+        color: black;
+        font-family: Raleway;        
+    }
+	div {
+		border: 1px solid #ff9900;
+        box-shadow: 5px 5px 5px grey;
+	}
+	.load_clear{
+		border: none;
+        box-shadow: none;
+	}
+	button { 
+		margin-top: 20px;	
+		margin-left: 20px;
+		margin-bottom: 15px;
+		padding: 10px 10px;	
+        font-family: Raleway;	
+    }    
+    .query_button{
+    	margin-top: 20px;	
+		margin-left: 0px;
+		margin-bottom: 15px;
+		padding: 10px 10px;	
+    }
+    ul { font-family: Raleway;	
+    	 color:red;
+    	font-weight: bold;
+    }
+</style>
+</head>
+	<body>
+		<h2>Drew's 490 Program 4</h2>
+		<div>
+			<div class="load_clear">
+				<form action="/load" style="float:left;"><button type="/button" onclick=""> Load Data </button></form>
+				<form action="/clear" ><button type="/button" onclick="">Clear Data</button></form>
+			</div>
+			<form action="" method="POST" class="input" >
+				First name: <input type="text" name="FirstName" ></br>
+				Last name:  <input type="text" name="LastName" ></br>
+				<button class="query_button" type="/button" onclick="">Query Data</button>
+				{% with messages = get_flashed_messages() %}
+		  		{% if messages %}
+		   		 	<ul class=flashes>
+			   		 	{% for message in messages %}
+			     	 	{{ message }}
+			    		{% endfor %}
+		   		 	</ul>
+		   		 	{% endif %}
+					{% endwith %}	
+					{% block body %}{% endblock %}
+			</form>					
+		</div>  
+	</body>
+</html>
