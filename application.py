@@ -4,6 +4,7 @@ import os
 import datetime
 from zipfile import ZipFile
 import json
+from sys import platform
 from flask import Flask, request, flash, redirect, render_template, session, url_for, session
 from werkzeug.utils import secure_filename
 
@@ -15,11 +16,14 @@ application.secret_key = 'some_secret'
 application.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 def traverse_zip(filename):
-	filename = os.getcwd() + '\\' + filename
-	with ZipFile(filename, 'r') as zip:
-		print(zip.namelist())
-		print(type(zip))
-		to_json(zip.namelist())
+    if platform == "linux" or "linux2":
+        filename = os.getcwd() + '/UPLOAD_FOLDER/' + filename
+    else:
+        filename = os.getcwd() + '\\' + filename
+    with ZipFile(filename, 'r') as zip:
+        print(zip.namelist())
+        print(type(zip))
+        to_json(zip.namelist())
 
 
 def to_json(path_list):
@@ -68,8 +72,9 @@ def upload_file():
 	
 
 if __name__ == '__main__':	
-
-	application.run(debug=True)
+    if not os.path.exists(os.getcwd() + "/UPLOAD_FOLDER"): 
+        os.makedirs(os.getcwd() + "/UPLOAD_FOLDER")
+    application.run(debug=True)
 
 
 
