@@ -1,20 +1,31 @@
-﻿body{
-    background-color: lightblue;
+﻿@import url('https://fonts.googleapis.com/css?family=Raleway');
+body{
+    
 }
 
 h1{
-    color: rebeccapurple;
-    font-family:'Times New Roman';
+   
+}
+.mainBar{
+    background: green;
+    color: white;
+    font-family:'Raleway';
     font-size:50px;
+    text-align: center;
+}
+h2 {
+    font-family:'Raleway';
+    font-size: 20px;   
+    text-align: center;
 }
 
 p{
-    font-family:'Times New Roman';
-    font-size:30px;
+    font-family:'Arial';
+    font-size:10px;
 }
 
 li{
-    font-family:'Times New Roman';
+    font-family:'Arial';
     font-size:20px;
 }
 
@@ -34,4 +45,11 @@ div.grid-container > div {
 
 div.file-display{
     border: 1px solid black;
+}
+
+div.whole-page-margin{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 3px solid black;
 }

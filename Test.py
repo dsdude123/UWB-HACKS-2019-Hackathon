@@ -3,8 +3,7 @@ import os
 import json
 
 
-def traverse_zip():
-    filename = "ThreadOS.zip"
+def traverse_zip(filename):
     with ZipFile(filename, 'r') as zip:
         print(zip.namelist())
         print(type(zip))
