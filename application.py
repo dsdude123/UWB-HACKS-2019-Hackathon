@@ -24,6 +24,7 @@ def traverse_zip(filename):
         print(zip.namelist())
         print(type(zip))
         to_json(zip.namelist())
+    os.remove(filename)
 
 
 def to_json(path_list):

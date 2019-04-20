@@ -1,1 +1,1 @@
-{"files": [{"path": "test1.txt"}, {"path": "test2.txt"}]}
+{"files": [{"path": "UPLOAD_FOLDER/"}, {"path": "UPLOAD_FOLDER/test.zip"}, {"path": "application.py"}, {"path": "requirements.txt"}, {"path": "static/"}, {"path": "static/drewstyles.css"}, {"path": "static/mainstylesheet.css"}, {"path": "templates/"}, {"path": "templates/examplehtml.html"}, {"path": "templates/sneakserv.html"}, {"path": "templates/test_html.html"}]}
