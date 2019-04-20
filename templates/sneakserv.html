@@ -1,50 +1,46 @@
-﻿<!DOCTYPE html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>SneakServ</title>
-<!--     <link rel="stylesheet" href="{{ url_for('static', filename='drewstyles.css') }}" /> 
- -->    
-    <link rel="stylesheet" href="{{ url_for('static', filename='mainstylesheet.css') }}" /> 
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h1 class="mainBar">SNEAK SERV</h1>
-    <h2>
-        UWBHacks 2019!<br>
-        We have absolutely <i><b>NO</b></i> idea what we're doing!
-    </h2>
-    <div class="whole-page-margin">
-        <div class="grid-container">
-             <form method=post enctype=multipart/form-data>
-                <input type=file name=file>
-                <input type=submit value=Upload>
-            </form><br>
-            <!-- <div><button type="button" class="dark" onclick="alert('hi there')">Theme</button></div> -->
-            <!-- <div class="file-display">
-                <h2>Files Uploaded:</h2>
-                <ol>
-                    <li>test</li>
-                </ol>
-            </div> -->
-            <!-- <div>Display theme example here</div> -->
-            <div><button type="button" class="dark" onclick="alert('Creating Zip File!')">Create Zip File</button> </div>
-        </div>
+
+<div class="container">
+  <div class="jumbotron" style="background: rebeccapurple">
+    <h1 style="color: white">SNEAK SERV</h1>      
+    <p style="color: white">We have absolutely <i><b>NO</b></i> idea what we're doing!</p>
+  </div>
+</div>
+<div class="container">
+  <h2>Please select a zip folder:</h2>
+  <!-- <a href="#" class="btn btn-info" role="button">Link Button</a> -->
+  <!-- <button type="button" class="btn btn-info">Button</button> -->
+  <!-- <input type="button" class="btn btn-info" value="Input Button"> -->
+  <!-- <input type="submit" class="btn btn-info" value="Submit Button"> <br> -->
+    
+    <form method=post enctype=multipart/form-data>  
+      <input type=file name=file> <br>
+      <input type=submit class="btn btn-info" value=Upload style="float:left; margin-right: 5px"> <br>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
-            <ul class=flashes>
-                {% for message in messages %}
-                {{ message }}
-                {% endfor %}
-            </ul>
-            {% endif %}
+        <ul class=flashes style="color:green; padding-bottom: 2px">
+            
+        </ul>
+        {% endif %}
         {% endwith %}   
         {% block body %}{% endblock %}
-        <p>
-            Contributors: Jayden Kang, Torren Sampson, Drew Loukusa, Princeton See, Connor Starkel, Mckauley Kolakowski
-        </p>
-    </div>
-    <script>        
-    </script>
+    </form><br>
+  <form method=post action="/download_zip">  
+      <input type=submit class="btn btn-info" value="Generate Zip">  </input>
+  </form><br>  
+  <p>
+  Contributors: Jayden Kang, Torren Sampson, Drew Loukusa, Princeton See, Conner Starkel, Mckauley Kolakowski
+  </p>
+</div>
 </body>
 </html>
